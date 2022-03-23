@@ -1,0 +1,1 @@
+(()=>{class t{constructor(t,e,s){this.index=t,this.completed=e,this.description=s}}let e=[t(0,!1,"wash the dishes"),t(1,!1,"complete To Do list project")];window.addEventListener("load",(()=>{e.array.forEach((t=>{}))}))})();
