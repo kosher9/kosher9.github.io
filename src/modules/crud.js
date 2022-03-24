@@ -12,10 +12,10 @@ export const addTask = (index, completed, description) => {
 export const updateIndex = (index) => {
   const tasks = loadStorage();
   const updatedIndexTasks = [];
-  tasks.array.forEach((element) => {
-    if (element.id > index) {
-      element.id -= 1;
-      updatedIndexTasks.push(element.id);
+  tasks.forEach((element) => {
+    if (element.index > index) {
+      element.index -= 1;
+      updatedIndexTasks.push(element);
     } else {
       updatedIndexTasks.push(element);
     }
@@ -25,7 +25,7 @@ export const updateIndex = (index) => {
 
 export const removeTask = (index) => {
   const tasks = loadStorage();
-  const newTasks = tasks.filter((item) => item.id !== index);
+  const newTasks = tasks.filter((item) => item.index !== index);
   updateStorage(newTasks);
   updateIndex(index);
   return loadStorage();
@@ -33,7 +33,7 @@ export const removeTask = (index) => {
 
 export const updateTask = (index, description) => {
   const tasks = loadStorage();
-  const id = tasks.findIndex((item) => item.id === index);
+  const id = tasks.findIndex((item) => item.index === index);
   tasks[id + 1].description = description;
   updateStorage(tasks);
 };
