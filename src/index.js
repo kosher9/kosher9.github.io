@@ -1,23 +1,21 @@
 import './style.css';
-import Task from './modules/task.js';
+import { addTask, removeTask, updateTask } from './modules/crud.js';
+import { loadStorage } from './modules/storage.js';
 
 // Font Awesome 5 (Free)
-import '@fortawesome/fontawesome-free/js/fontawesome';
-import '@fortawesome/fontawesome-free/js/solid'; // https://fontawesome.com/icons?d=gallery&s=solid&m=free
-import '@fortawesome/fontawesome-free/js/regular'; // https://fontawesome.com/icons?d=gallery&s=regular&m=free
-import '@fortawesome/fontawesome-free/js/brands'; // https://fontawesome.com/icons?d=gallery&s=brands&m=free
+import '@fortawesome/fontawesome-free/js/fontawesome.js';
+import '@fortawesome/fontawesome-free/js/solid.js'; // https://fontawesome.com/icons?d=gallery&s=solid&m=free
+import '@fortawesome/fontawesome-free/js/regular.js'; // https://fontawesome.com/icons?d=gallery&s=regular&m=free
+import '@fortawesome/fontawesome-free/js/brands.js'; // https://fontawesome.com/icons?d=gallery&s=brands&m=free
 
 const container = document.getElementById('ctn-task-list');
-
-const task1 = new Task(1, false, 'wash the dishes');
-const task2 = new Task(0, false, 'complete To Do list project');
-const task3 = new Task(3, false, "Let's do one more");
-
-const taskList = [task1, task2, task3];
+const descInput = document.getElementById('input-txt');
+const enterButton = document.getElementById('ctn-icon-arrow');
 
 const orderTasks = (listTask) => listTask.sort((a, b) => a.index - b.index);
 
 const populateHtml = (tasks) => {
+  container.innerHTML = '';
   tasks.forEach((element) => {
     const li = document.createElement('li');
     const fDiv = document.createElement('div');
@@ -25,7 +23,10 @@ const populateHtml = (tasks) => {
     const fIpt = document.createElement('input');
     const sIpt = document.createElement('input');
     const iDiv = document.createElement('div');
-    const icon = document.createElement('i');
+    const oDiv = document.createElement('div');
+    const dDiv = document.createElement('div');
+    const iconOpt = document.createElement('i');
+    const iconDel = document.createElement('i');
     const line = document.createElement('div');
 
     fDiv.className = 'ctn-task';
@@ -33,25 +34,81 @@ const populateHtml = (tasks) => {
     fIpt.className = 'checkbox';
     sIpt.className = 'description';
     iDiv.className = 'ctn-icon';
-    icon.className = 'fa-solid fa-ellipsis-vertical';
+    iconOpt.className = 'fa-solid fa-ellipsis-vertical';
+    iconDel.className = 'fa-solid fa-trash-can';
     line.className = 'line';
 
     fIpt.setAttribute('type', 'checkbox');
 
     sIpt.setAttribute('type', 'text');
+    dDiv.style.display = 'none';
     sIpt.value = element.description;
+    sIpt.readOnly = true;
 
     sDiv.appendChild(fIpt);
     sDiv.appendChild(sIpt);
-    iDiv.appendChild(icon);
+    oDiv.appendChild(iconOpt);
+    dDiv.appendChild(iconDel);
+    iDiv.appendChild(oDiv);
+    iDiv.appendChild(dDiv);
     fDiv.appendChild(sDiv);
     fDiv.appendChild(iDiv);
     li.appendChild(fDiv);
     li.appendChild(line);
     container.appendChild(li);
+
+    oDiv.addEventListener('click', () => {
+      if (sIpt.readOnly) {
+        sIpt.readOnly = false;
+        oDiv.style.display = 'none';
+        dDiv.style.display = 'block';
+        li.style.backgroundColor = 'rgb(235, 252, 231)';
+        sIpt.style.backgroundColor = 'rgb(235, 252, 231)';
+      }
+    });
+
+    sIpt.addEventListener('keyup', (event) => {
+      if (event.key === 'Enter') {
+        sIpt.readOnly = true;
+        oDiv.style.display = 'block';
+        dDiv.style.display = 'none';
+        li.style.backgroundColor = 'white';
+        sIpt.style.backgroundColor = 'white';
+        updateTask(element.id, sIpt.value);
+      }
+    });
+
+    dDiv.addEventListener('click', () => {
+      removeTask(element.index);
+      populateHtml(orderTasks(loadStorage()));
+    });
   });
 };
 
+enterButton.addEventListener('click', () => {
+  if (descInput.value !== '') {
+    const index = loadStorage().length + 1;
+    const completed = false;
+    const description = descInput.value;
+    const task = addTask(index, completed, description);
+    descInput.value = '';
+    populateHtml(orderTasks(task));
+  }
+});
+
+descInput.addEventListener('keyup', (event) => {
+  if (event.key === 'Enter') {
+    if (descInput.value !== '') {
+      const index = loadStorage().length + 1;
+      const completed = false;
+      const description = descInput.value;
+      const task = addTask(index, completed, description);
+      descInput.value = '';
+      populateHtml(orderTasks(task));
+    }
+  }
+});
+
 window.addEventListener('load', () => {
-  populateHtml(orderTasks(taskList));
+  populateHtml(orderTasks(loadStorage()));
 });

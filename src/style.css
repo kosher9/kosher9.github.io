@@ -64,6 +64,12 @@ select:focus {
   font-size: 12px;
 }
 
+.fa-trash-can:hover {
+  color: rgb(248, 68, 68);
+  cursor: pointer;
+  font-size: 12px;
+}
+
 .fa-ellipsis-vertical:hover {
   cursor: move;
 }
