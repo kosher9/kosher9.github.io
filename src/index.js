@@ -2,10 +2,10 @@ import './style.css';
 import Task from './modules/task.js';
 
 // Font Awesome 5 (Free)
-import '@fortawesome/fontawesome-free/js/fontawesome';
-import '@fortawesome/fontawesome-free/js/solid'; // https://fontawesome.com/icons?d=gallery&s=solid&m=free
-import '@fortawesome/fontawesome-free/js/regular'; // https://fontawesome.com/icons?d=gallery&s=regular&m=free
-import '@fortawesome/fontawesome-free/js/brands'; // https://fontawesome.com/icons?d=gallery&s=brands&m=free
+import '@fortawesome/fontawesome-free/js/fontawesome.js';
+import '@fortawesome/fontawesome-free/js/solid.js'; // https://fontawesome.com/icons?d=gallery&s=solid&m=free
+import '@fortawesome/fontawesome-free/js/regular.js'; // https://fontawesome.com/icons?d=gallery&s=regular&m=free
+import '@fortawesome/fontawesome-free/js/brands.js'; // https://fontawesome.com/icons?d=gallery&s=brands&m=free
 
 const container = document.getElementById('ctn-task-list');
 
