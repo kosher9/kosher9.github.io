@@ -1,3 +1,4 @@
+import objectKeys from 'object-keys';
 import { loadStorage, updateStorage } from './storage.js';
 import Task from './task.js';
 
@@ -33,7 +34,15 @@ export const removeTask = (index) => {
 
 export const updateTask = (index, description) => {
   const tasks = loadStorage();
-  const id = tasks.findIndex((item) => item.index === index);
+  const id = tasks.findIndex((item) => item.index === index - 1);
   tasks[id + 1].description = description;
+  updateStorage(tasks);
+};
+
+export const deleteCompletedTasks = () => {
+  const tasks = loadStorage().filter((item) => item.completed === false);
+  Object.keys(tasks).forEach((key) => {
+    tasks[key].index = parseInt(key, 10) + 1;
+  });
   updateStorage(tasks);
 };
