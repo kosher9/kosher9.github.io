@@ -86,22 +86,26 @@ const populateHtml = (tasks) => {
 };
 
 enterButton.addEventListener('click', () => {
-  const index = loadStorage().length + 1;
-  const completed = false;
-  const description = descInput.value;
-  const task = addTask(index, completed, description);
-  descInput.value = '';
-  populateHtml(orderTasks(task));
-});
-
-descInput.addEventListener('keyup', (event) => {
-  if (event.key === 'Enter') {
+  if (descInput.value !== '') {
     const index = loadStorage().length + 1;
     const completed = false;
     const description = descInput.value;
     const task = addTask(index, completed, description);
     descInput.value = '';
     populateHtml(orderTasks(task));
+  }
+});
+
+descInput.addEventListener('keyup', (event) => {
+  if (event.key === 'Enter') {
+    if (descInput.value !== '') {
+      const index = loadStorage().length + 1;
+      const completed = false;
+      const description = descInput.value;
+      const task = addTask(index, completed, description);
+      descInput.value = '';
+      populateHtml(orderTasks(task));
+    }
   }
 });
 
