@@ -12,23 +12,30 @@
         <section class="container">
             <div class="ctn-head">
                 <h5 class="head-title">Today's To Do</h5>
-                <i class="fa-solid fa-arrows-rotate"></i>
+                <div class="ctn-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
             </div>
-            <hr>
-            <div>
-                <input type="text" placeholder="Add to your list...">
-                <div><i class="fa-solid fa-arrows-rotate"></i></div>
+            <div class="line"></div>
+            <div class="ctn-input">
+                <input class="input-txt" type="text" placeholder="Add to your list...">
+                <div class="ctn-icon"><i class="fa-solid fa-arrow-turn-down"></i></div>
             </div>
-            <hr>
-            <ul>
-                <li>
-                    <input type="checkbox" name="completed">
-                    <div>
-                        <h5 id="description"></h5>
-                        <div><img src="" alt=""></div>
+            <div class="line"></div>
+            <ul id="ctn-task-list" class="ctn-task-list">
+
+                <!-- I left comments for test purpose. I will delete it for the last submit -->
+
+                <!-- <li>
+                    <div class="ctn-task">
+                        <div class="ctn-left">
+                            <input class="checkbox" type="checkbox" name="completed">
+                            <input id="description" class="description" type="text" placeholder="Something interesting">
+                        </div>
+                        <div class="ctn-icon"><i class="fa-solid fa-ellipsis-vertical"></i></div>
                     </div>
-                </li>
+                    <div class="line"></div>
+                </li> -->
             </ul>
+            <div class="ctn-txt-bottom"><h5 class="txt-bottom">Clear all completed</h5></div>
         </section>
     </main>
 </body>
