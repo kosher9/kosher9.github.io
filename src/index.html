@@ -1,11 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wbpack Exercise</title>
+    <title>To Do list</title>
 </head>
+
 <body>
-    <h1>Hello webpack!</h1>
+    <main>
+        <section class="container">
+            <div class="ctn-head">
+                <h5 class="head-title">Today's To Do</h5>
+                <div class="ctn-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
+            </div>
+            <div class="line"></div>
+            <div class="ctn-input">
+                <input class="input-txt" type="text" placeholder="Add to your list...">
+                <div class="ctn-icon"><i class="fa-solid fa-arrow-turn-down"></i></div>
+            </div>
+            <div class="line"></div>
+            <ul id="ctn-task-list" class="ctn-task-list">
+
+                <!-- I left comments for test purpose. I will delete it for the last submit -->
+
+                <!-- <li>
+                    <div class="ctn-task">
+                        <div class="ctn-left">
+                            <input class="checkbox" type="checkbox" name="completed">
+                            <input id="description" class="description" type="text" placeholder="Something interesting">
+                        </div>
+                        <div class="ctn-icon"><i class="fa-solid fa-ellipsis-vertical"></i></div>
+                    </div>
+                    <div class="line"></div>
+                </li> -->
+            </ul>
+            <div class="ctn-txt-bottom"><h5 class="txt-bottom">Clear all completed</h5></div>
+        </section>
+    </main>
 </body>
+
 </html>
