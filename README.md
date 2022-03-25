@@ -32,7 +32,7 @@ The basic requirements for building the executable are:
 - Node Package Manager (For running, debuging, or installing dependancies to be used)
 
 ### Setup
->git clone https://github.com/Regiss05/Awesome-Books.git
+>git clone https://github.com/kosher9/todo_list.git
 
 ### Install
 Getting packages and debuging with Stylelint
@@ -52,6 +52,7 @@ Getting packages and debuging with Eslint
 ### Usage
 - JS
 - HTML
+- CSS
 
 
 ### Run tests
@@ -64,10 +65,6 @@ For validation detection using Webhint Run
 For validation detection using Stylelint Run
 >npx stylelint "**/*.{css,scss}"
 
-### Deployment
-
-
-
 ## Authors
 
 👤 **Cedric Kossi**
@@ -75,12 +72,6 @@ For validation detection using Stylelint Run
 - GitHub: [@githubhandle](https://github.com/kosher9)
 - Twitter: [@twitterhandle](https://twitter.com/kosherus)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/lionel-c%C3%A9dric-kossi-323042172/)
-
-👤 **Regiss Mukubiza**
-
-- GitHub: [@githubhandle](https://github.com/regiss05)
-- Twitter: [@twitterhandle](https://twitter.com/regiss05)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/regiss05)
 
 ## 🤝 Contributing
 
