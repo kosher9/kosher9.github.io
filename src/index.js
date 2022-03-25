@@ -1,6 +1,12 @@
 import './style.css';
-import { addTask, removeTask, updateTask } from './modules/crud.js';
+import {
+  addTask,
+  removeTask,
+  updateTask,
+  deleteCompletedTasks,
+} from './modules/crud.js';
 import { loadStorage } from './modules/storage.js';
+import isComplete from './modules/state.js';
 
 // Font Awesome 5 (Free)
 import '@fortawesome/fontawesome-free/js/fontawesome.js';
@@ -11,6 +17,7 @@ import '@fortawesome/fontawesome-free/js/brands.js'; // https://fontawesome.com/
 const container = document.getElementById('ctn-task-list');
 const descInput = document.getElementById('input-txt');
 const enterButton = document.getElementById('ctn-icon-arrow');
+const cmpltTaskButton = document.getElementById('erase-div');
 
 const orderTasks = (listTask) => listTask.sort((a, b) => a.index - b.index);
 
@@ -45,6 +52,10 @@ const populateHtml = (tasks) => {
     sIpt.value = element.description;
     sIpt.readOnly = true;
 
+    if (element.completed) {
+      fIpt.checked = true;
+    }
+
     sDiv.appendChild(fIpt);
     sDiv.appendChild(sIpt);
     oDiv.appendChild(iconOpt);
@@ -74,13 +85,17 @@ const populateHtml = (tasks) => {
         dDiv.style.display = 'none';
         li.style.backgroundColor = 'white';
         sIpt.style.backgroundColor = 'white';
-        updateTask(element.id, sIpt.value);
+        updateTask(element.index, sIpt.value);
       }
     });
 
     dDiv.addEventListener('click', () => {
       removeTask(element.index);
       populateHtml(orderTasks(loadStorage()));
+    });
+
+    fIpt.addEventListener('click', () => {
+      isComplete(element.index);
     });
   });
 };
@@ -107,6 +122,11 @@ descInput.addEventListener('keyup', (event) => {
       populateHtml(orderTasks(task));
     }
   }
+});
+
+cmpltTaskButton.addEventListener('click', () => {
+  deleteCompletedTasks();
+  populateHtml(orderTasks(loadStorage()));
 });
 
 window.addEventListener('load', () => {
