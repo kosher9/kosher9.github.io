@@ -139,6 +139,7 @@
     "function-bind": "^1.1.1",
     "get-intrinsic": "^1.1.1",
     "get-stream": "^6.0.1",
+    "gh-pages": "^3.2.3",
     "glob": "^7.2.0",
     "glob-parent": "^5.1.2",
     "glob-to-regexp": "^0.4.1",
