@@ -71,7 +71,7 @@ For validation detection using Stylelint Run
 
 - GitHub: [@kosher9](https://github.com/kosher9)
 - Twitter: [@kosherus](https://twitter.com/kosherus)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/lionel-c%C3%A9dric-kossi-323042172)
+- LinkedIn: [Lionel Cedric KOSSI](https://linkedin.com/in/lionel-c%C3%A9dric-kossi-323042172)
 
 ## 🤝 Contributing
 
