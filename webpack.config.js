@@ -2,13 +2,13 @@
 
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const productionConfig = merge([
+/* const productionConfig = merge([
   {
     output: {
       publicPath: '/webpack-demo/',
     },
   },
-]);
+]); */
 
 module.exports = {
   mode: 'development',
