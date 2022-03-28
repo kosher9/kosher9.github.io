@@ -69,9 +69,9 @@ For validation detection using Stylelint Run
 
 👤 **Cedric Kossi**
 
-- GitHub: [@githubhandle](https://github.com/kosher9)
-- Twitter: [@twitterhandle](https://twitter.com/kosherus)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/lionel-c%C3%A9dric-kossi-323042172/)
+- GitHub: [@kosher9](https://github.com/kosher9)
+- Twitter: [@kosherus](https://twitter.com/kosherus)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/lionel-c%C3%A9dric-kossi-323042172)
 
 ## 🤝 Contributing
 
