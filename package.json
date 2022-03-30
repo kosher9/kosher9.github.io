@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "start": "webpack serve --open",
     "build": "webpack",
     "deploy": "gh-pages -d dist"
