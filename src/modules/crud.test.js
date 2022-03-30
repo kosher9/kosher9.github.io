@@ -1,4 +1,4 @@
-import { addTask, removeTask } from '../__mocks__/crud.js';
+import { addTask } from '../__mocks__/crud.js';
 
 describe('crud', () => {
   test('add task', () => {
