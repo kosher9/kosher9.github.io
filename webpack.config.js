@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 /* const productionConfig = merge([
@@ -14,8 +12,9 @@ module.exports = {
   mode: 'development',
   entry: './src/index.js',
   output: {
-    filename: 'main.js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    clean: true,
   },
   module: {
     rules: [
@@ -39,9 +38,4 @@ module.exports = {
       template: './src/index.html',
     }),
   ],
-  output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-    clean: true,
-  },
 };
