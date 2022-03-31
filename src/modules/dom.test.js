@@ -1,6 +1,7 @@
 /**
  * @jest-environment jsdom
  */
+import { test } from 'media-typer';
 import { addTask, removeTask } from '../__mocks__/crud.js';
 import { loadStorage } from '../__mocks__/storage.js';
 
@@ -34,4 +35,8 @@ describe('dom add and remove', () => {
     const list = container.children;
     expect(list).toHaveLength(0);
   });
+});
+
+describe('dom events', () => {
+  // test()
 });

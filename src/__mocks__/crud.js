@@ -33,8 +33,8 @@ export const removeTask = (index) => {
 
 export const updateTask = (index, description) => {
   const tasks = loadStorage();
-  const id = tasks.findIndex((item) => item.index === index - 1);
-  tasks[id + 1].description = description;
+  const id = tasks.findIndex((item) => item.index === index);
+  tasks[id].description = description;
   updateStorage(tasks);
 };
 
