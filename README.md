@@ -1,8 +1,8 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Awesome Books
+# ToDO app
 
-> A online application that allows you to add your books to a digital shelf. Vanila javascript was used to create this website. This project now has a local storage option, allowing users to save data in the web app.
+>  A web todo list application 
 
 
 ## Built With
@@ -10,6 +10,8 @@
 - Lighthouse (An open-source, automated tool for improving the quality of web pages. It has audits for performance, accessibility, progressive web apps, SEO and more).
 - Webhint (A customizable linting tool that helps you improve your site's accessibility, speed, cross-browser compatibility, and more by checking your code for best practices and common errors).
 - Stylelint (A mighty, modern linter that helps you avoid errors and enforce conventions in your styles).
+- WebPack (A static module bundler for modern JavaScript applications.)
+- Jest (For testing)
 
 ## Live Demo (if available)
 
@@ -17,9 +19,6 @@
 
 
 ## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
 
 
 To get a local copy up and running follow these simple example steps.
@@ -32,7 +31,7 @@ The basic requirements for building the executable are:
 - Node Package Manager (For running, debuging, or installing dependancies to be used)
 
 ### Setup
->git clone https://github.com/kosher9/todo_list.git
+>git clone https://github.com/kosher9/kosher9.github.io.git
 
 ### Install
 Getting packages and debuging with Stylelint
@@ -48,6 +47,8 @@ Getting packages and debuging with Eslint
 >npm install --save-dev eslint@7.x eslint-config-airbnb-base@14.x eslint-plugin-import@2.x babel-eslint@10.x
 
 
+Getting packages and testing with Jest
+>npm run test
 
 ### Usage
 - JS
@@ -64,6 +65,9 @@ For validation detection using Webhint Run
 
 For validation detection using Stylelint Run
 >npx stylelint "**/*.{css,scss}"
+
+For unit testing
+>npm run test
 
 ## Authors
 
