@@ -18,8 +18,6 @@ const descInput = document.getElementById('input-txt');
 const enterButton = document.getElementById('ctn-icon-arrow');
 const cmpltTaskButton = document.getElementById('erase-div');
 
-// const orderTasks = (listTask) => listTask.sort((a, b) => a.index - b.index);
-
 const populateHtml = (tasks) => {
   container.innerHTML = '';
   tasks.forEach((element) => {
@@ -27,7 +25,7 @@ const populateHtml = (tasks) => {
     const leftDiv = document.createElement('div');
     const rightDiv = document.createElement('div');
     const checkBox = document.createElement('input');
-    const descInout = document.createElement('input');
+    const descInput = document.createElement('input');
     const iconCtn = document.createElement('div');
     const optDiv = document.createElement('div');
     const delDiv = document.createElement('div');
@@ -38,7 +36,7 @@ const populateHtml = (tasks) => {
     leftDiv.className = 'ctn-task';
     rightDiv.className = 'ctn-left';
     checkBox.className = 'checkbox';
-    descInout.className = 'description';
+    descInput.className = 'description';
     iconCtn.className = 'ctn-icon';
     iconOpt.className = 'fa-solid fa-ellipsis-vertical';
     iconDel.className = 'fa-solid fa-trash-can';
@@ -46,17 +44,17 @@ const populateHtml = (tasks) => {
 
     checkBox.setAttribute('type', 'checkbox');
 
-    descInout.setAttribute('type', 'text');
+    descInput.setAttribute('type', 'text');
     delDiv.style.display = 'none';
-    descInout.value = element.description;
-    descInout.readOnly = true;
+    descInput.value = element.description;
+    descInput.readOnly = true;
 
     if (element.completed) {
       checkBox.checked = true;
     }
 
     rightDiv.appendChild(checkBox);
-    rightDiv.appendChild(descInout);
+    rightDiv.appendChild(descInput);
     optDiv.appendChild(iconOpt);
     delDiv.appendChild(iconDel);
     iconCtn.appendChild(optDiv);
@@ -68,23 +66,23 @@ const populateHtml = (tasks) => {
     container.appendChild(li);
 
     optDiv.addEventListener('click', () => {
-      if (descInout.readOnly) {
-        descInout.readOnly = false;
+      if (descInput.readOnly) {
+        descInput.readOnly = false;
         optDiv.style.display = 'none';
         delDiv.style.display = 'block';
         li.style.backgroundColor = 'rgb(235, 252, 231)';
-        descInout.style.backgroundColor = 'rgb(235, 252, 231)';
+        descInput.style.backgroundColor = 'rgb(235, 252, 231)';
       }
     });
 
-    descInout.addEventListener('keyup', (event) => {
+    descInput.addEventListener('keyup', (event) => {
       if (event.key === 'Enter') {
-        descInout.readOnly = true;
+        descInput.readOnly = true;
         optDiv.style.display = 'block';
         delDiv.style.display = 'none';
         li.style.backgroundColor = 'white';
-        descInout.style.backgroundColor = 'white';
-        updateTask(element.index, descInout.value);
+        descInput.style.backgroundColor = 'white';
+        updateTask(element.index, descInput.value);
       }
     });
 
