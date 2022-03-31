@@ -43,9 +43,6 @@ describe('dom add and remove', () => {
   });
 });
 
-// Write test to check dom manipulations
-// if deletion button is visible, options button should not
-
 describe('dom manipulation', () => {
   test('check display of description of an item', () => {
     addTask(1, false, 'task1');

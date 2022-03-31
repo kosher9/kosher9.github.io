@@ -18,8 +18,6 @@ const descInput = document.getElementById('input-txt');
 const enterButton = document.getElementById('ctn-icon-arrow');
 const cmpltTaskButton = document.getElementById('erase-div');
 
-// const orderTasks = (listTask) => listTask.sort((a, b) => a.index - b.index);
-
 const populateHtml = (tasks) => {
   container.innerHTML = '';
   tasks.forEach((element) => {
