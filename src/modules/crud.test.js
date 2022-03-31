@@ -1,4 +1,4 @@
-import { addTask } from '../__mocks__/crud.js';
+import { addTask, removeTask } from '../__mocks__/crud.js';
 
 describe('crud', () => {
   test('add task', () => {
@@ -7,7 +7,7 @@ describe('crud', () => {
     ]);
   });
 
-  /* test('remove task', () => {
+  test('remove task', () => {
     addTask(1, false, 'task1');
     addTask(2, false, 'task2');
     addTask(3, false, 'task3');
@@ -23,5 +23,5 @@ describe('crud', () => {
         index: 2,
       },
     ]);
-  }); */
+  });
 });
