@@ -4,7 +4,7 @@
 
 >  A web todo list application 
 
-![alt text](https://drive.google.com/file/d/11DlQoAuhHND6bZe2PDTEhlyDqZkRqQrz/view?usp=sharing)
+![preview](src/img/preview.png)
 
 
 ## Built With
