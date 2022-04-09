@@ -4,6 +4,8 @@
 
 >  A web todo list application 
 
+![preview](src/img/preview.png)
+
 
 ## Built With
 
