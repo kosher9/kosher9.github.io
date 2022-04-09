@@ -4,6 +4,8 @@
 
 >  A web todo list application 
 
+![alt text](https://github.com/kosher9/kosher9.github.io/src/img/preview.png)
+
 
 ## Built With
 
